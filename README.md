@@ -3,5 +3,5 @@
 ## Installation And Usage
 
 ```bash
-yarn && npm dev
+yarn && yarn dev
 ```
