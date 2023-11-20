@@ -1722,10 +1722,10 @@ next@13.3.1:
     "@next/swc-win32-ia32-msvc" "13.3.1"
     "@next/swc-win32-x64-msvc" "13.3.1"
 
-nobox-client@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.npmjs.org/nobox-client/-/nobox-client-1.0.4.tgz"
-  integrity sha512-DuDGro7I9NPylKXH/Kz5OHnIvX4oxd5dU5ipyRmUG65qtAPpvVt4g9fazGkNn5xpjIRFfVwe2z7PmrJegTZN2w==
+nobox-client@^1.11.13:
+  version "1.11.13"
+  resolved "https://registry.yarnpkg.com/nobox-client/-/nobox-client-1.11.13.tgz#3f75bc53b916e91392390f0424b7121124b38080"
+  integrity sha512-GmOS+rgueesHrCZaozDvlORptPm1fedeeA8ofctk39KRRtfWHm4tUnnk6gvbmgXudXm5oTQyb5FGqRnXxCLXmg==
   dependencies:
     axios "^1.1.3"
 
