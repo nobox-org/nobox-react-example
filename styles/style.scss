@@ -1,0 +1,463 @@
+@use './variables' as *;
+@use './mixins' as mixins;
+
+
+@import './reset';
+@import './theme';
+
+
+
+/* -------------------- */
+/* Utility classes      */
+/* -------------------- */
+
+@include mixins.flex(".d-flex");
+@include mixins.flex-layout(".md");
+
+
+
+.d-block {
+    display: block;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    /* added line*/
+    border: 0;
+}
+
+.skip-to-content {
+    position: absolute;
+
+    color: inherit;
+
+    padding: .5em 1em;
+    margin-inline: auto;
+    z-index: 500;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0%);
+}
+
+
+/* Colors */
+
+
+.debug {
+    outline: 1px solid red;
+}
+
+.container {
+    width: $md-breakpoint;
+    overflow: hidden;
+    max-width: 100%;
+
+    margin-inline: auto;
+
+    padding-inline: 1rem;
+    @include mixins.md {
+        padding-inline: 2.5rem;
+    }
+
+
+    &.not-hidden {
+        overflow: visible !important;
+    }
+}
+
+.box-shadow {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+}
+
+.fw {
+    &-300 {
+        font-weight: 300;
+    }
+    &-600 {
+        font-weight: 600;
+    }
+    &-800 {
+        font-weight: 800;
+    }
+}
+
+.fs {
+    &-12 {
+        font-size: 12px;
+    }
+    &-14 {
+        font-size: 14px;
+    }
+    &-16 {
+        font-size: 16px;
+    }
+
+    &-17 {
+        font-size: 1.3rem;
+    }
+
+    @include mixins.md {
+        &-md-14 {
+            font-size: 14px;
+        }
+    
+        &-md-16 {
+            font-size: 16px;
+        }
+    
+        &-md-17 {
+            font-size: 1.3rem;
+        }
+    }
+    @include mixins.sm {
+        &-sm-14 {
+            font-size: 14px;
+        }
+    
+        &-sm-16 {
+            font-size: 16px;
+        }
+    
+        &-sm-17 {
+            font-size: 1rem;
+        }
+    }
+}
+
+.dot-sep {
+    margin-inline: .3rem;
+}
+.p {
+    &-1 {padding: 1rem;}
+}
+.pt {
+    &-1 {
+        padding-block: 1rem;
+    }
+}
+.py {
+    &-1 {
+        padding-block: 1rem;
+    }
+    &-2 {
+        padding-block: 2.3rem;
+    }
+}
+.px {
+    &-1 {
+        padding-inline: 1rem;
+    }
+}
+
+.btn {
+    cursor: pointer;
+
+    border-radius: .3rem;
+
+    padding-block: .3rem;
+
+    width: 150px;
+    
+}
+
+.border-none {
+    border: 0
+}
+
+.ml {
+    &-07 {
+        margin-left: .5rem;
+    }
+    &-1 {
+        margin-left: 1rem;
+    }
+}
+.mr {
+    &-1 {
+        margin-right: 1rem;
+    }
+    &-07 {
+        margin-right: .5rem;
+    }
+}
+.my {
+    &-1 {
+        margin-block: 1rem;
+    }
+    &-1-07 {
+        margin-block: 1.5rem;
+    }
+    &-07 {
+        margin-block: .5rem;
+    }
+}
+.mx {
+    &-1 {
+        margin-inline: 1rem;
+    }
+    &-1-07 {
+        margin-inline: 1.5rem;
+    }
+    &-07 {
+        margin-inline: .5rem;
+    }
+}
+
+.mb {
+    &-1 {
+        margin-bottom: .7rem;
+    }
+
+    &-1-07 {
+        margin-bottom: 1.5rem;
+    }
+
+    &-07 {
+        margin-bottom: .5rem;
+    }
+}
+
+.icon {
+    font-size: 1rem;
+
+    &--sm {
+        font-size: .8rem;
+    }
+    position: relative;
+    
+    &:not(.icon--base) {
+        top: .2rem;
+    }
+
+}
+
+
+.text {
+    &-center {
+        text-align: center;
+    }
+
+    &-capitalize {
+        text-transform: capitalize;
+    }
+    &-italics {
+        font-style: italic;
+    }
+    &-bold {
+        font-family: bold;
+    }
+}
+
+
+.form-group {
+
+
+    text-align: right;
+
+    input {
+        padding-block: .4rem;
+        width: 100%;
+    }
+
+    textarea {
+
+        border-radius: .3rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.x {
+    
+    
+    @include mixins.xrem(row-gap, 4);
+    @include mixins.xrem(column-gap, 3);
+
+    @include mixins.sm {
+        justify-content: center;
+    }
+    @include mixins.md {
+        // justify-content:first baseline;
+        gap: 5.65rem;
+    }
+    
+
+}
+
+
+article {
+
+    background-color: $lm-elem;
+
+    margin-block: 1.6rem;
+
+    padding: 1rem 1rem ;
+
+    // background-color: red;
+    // .img {
+    //     height: 200px;
+    //     width: 100%;
+    //     overflow: hidden;
+    // }
+
+    // .details {
+    //     padding: 1rem;
+    // }
+
+
+    // @include mixins.md {
+    //     width: 275px;
+
+    //     .img {
+    //         height: 155px;
+    //     }
+    // }
+}
+
+.bk-btn {
+    
+    width: 5rem;
+    padding-block: .4rem;
+}
+
+
+.tags {
+    
+    // flex-direction: column;
+    
+    @include mixins.md {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &>div {
+        gap: .4rem;
+    }
+}
+.tag {
+    display: inline-block;
+    padding: .2rem 1.5rem;
+}
+
+
+.info {
+    display: flex;
+    flex-direction: column;
+
+    
+    
+
+    @include mixins.md {
+        flex-direction: row;
+        align-items: center;
+        column-gap: 4rem;
+
+    }
+
+    .detail {
+        display: flex;
+        width: 500px;
+        max-width: 100%;
+
+        flex-direction: column;
+
+        @include mixins.sm {
+            row-gap: 1rem;
+        }
+
+
+        @include mixins.md {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+
+    }
+}
+
+.img-large {
+    height: 250px;
+    
+    width: 500px !important;
+
+    position: relative;
+    max-width: 100%;
+
+
+    @include mixins.md {
+        height: 400px;
+    }
+
+    // margin-inline: auto;
+}
+
+.relative {
+    position: relative;
+    // overflow: auto;
+}
+
+.dropdown {
+    position: relative;
+    border-radius: .3rem;
+
+    button {
+        border-radius: .3rem;
+        padding: .5rem 1rem;
+
+        width: 9rem;
+    }
+
+    .icon {
+        font-size: .8rem;
+        top: .2rem;
+    }
+
+    &-menu {
+        position: absolute;
+        top: 70%;
+        width: 100%;
+
+        border-radius: inherit;
+
+        opacity: 0;
+
+        li {
+            padding: .2rem 1rem;
+
+            cursor: pointer;
+
+            &:last-of-type {
+                padding-bottom: .5rem;
+            }
+
+            &:first-of-type {
+                padding-top: .5rem;
+            }
+        }
+
+
+        pointer-events: none;
+        transform: translateY(-10px);
+        transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    }
+
+
+    &[data-show] .dropdown-menu {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+}

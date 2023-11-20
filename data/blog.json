@@ -1,0 +1,17 @@
+[
+    {
+        "id":"1",
+        "content": "Create-react-app should be banned",
+        "user": "1"
+    },
+    {
+        "id":"2",
+        "content": "Simple tweet",
+        "user": "1"
+    },
+    {
+        "id":"3",
+        "content": "Simple microblog",
+        "user": "1"
+    }
+]
