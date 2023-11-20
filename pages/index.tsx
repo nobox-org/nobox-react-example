@@ -10,7 +10,7 @@ export default function Home() {
 
   const inputRef = useRef(null);
 
-  const updatedContent = (data: Blog | Blog[]) => {
+  const updatedContent = (data: Blog[]) => {
 
     if (!data) return;
     
@@ -45,6 +45,8 @@ export default function Home() {
 
       if(error) setError(null);
       updatedContent(res_content.data);
+
+      setContent(()=>[...res_content.data]);
     }
 
 
@@ -70,10 +72,12 @@ export default function Home() {
     fetch('/api/blog', {
       method: 'POST',
       body: JSON.stringify({ data: inputElem.value })
-    }).then((res)=>res.json()).then((data)=>{
+    }).then((res)=>res.json()).then((result)=>{
 
+      const { data } = result;
+      console.log("Data", data);
 
-      updatedContent(data);
+      setContent((p)=>[...data, ...p]);
       
       inputElem.value = "";
 
@@ -118,8 +122,9 @@ export default function Home() {
             name='newContent'
             ref={inputRef}
             required
+            readOnly={loading}
           />
-          <button type="submit" className='btn fw-600 text-light bg-dark border-none box-shadow'>Post</button>
+          <button type="submit" disabled={loading} className='btn fw-600 text-light bg-dark border-none box-shadow'>Post</button>
         </form>
 
       </section>

@@ -10,5 +10,5 @@ export const config: Config = {
 
 
 
-export const createSchema = getSchemaCreator(config);
+export const createSchema = getSchemaCreator(config, { type: "rowed" });
 export const Nobox = getFunctions(config);

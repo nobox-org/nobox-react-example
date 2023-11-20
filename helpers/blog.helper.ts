@@ -28,7 +28,7 @@ export const handlePost = async (req: NextApiRequest): Promise<ResponseData> => 
 
 
       code = 201;
-      data = dt;
+      data = [ dt ];
 
 
     } catch (err) {
