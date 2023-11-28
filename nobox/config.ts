@@ -3,8 +3,8 @@ import { getKeyGroupSchemaCreator } from "nobox-client/lib/create-schema/create-
 
 export const config: Config = {
     endpoint: "http://localhost:8000",
-    project: "slui",
-    token: "cfabias8s2a0mt2mb-dmbhmg65ddhf-mtl3d7gm9"
+    project: "hey",
+    token: "a2tu5bj-4dacm2anramgbap-4m2a0acaasnvjzj3"
 };
 
 

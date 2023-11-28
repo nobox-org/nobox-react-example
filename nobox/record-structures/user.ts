@@ -6,6 +6,7 @@ interface User {
     password: string;
     firstName: string;
     age: number;
+    made: boolean;
 }
 
 export const UserStructure: Space<User> = {
@@ -32,6 +33,11 @@ export const UserStructure: Space<User> = {
             description: "User's Street Number",
             required: false,
             type: Number,
+        },
+        made: {
+            description: "if User is made of Gold",
+            required: false,
+            type: Boolean
         }
     }
 }

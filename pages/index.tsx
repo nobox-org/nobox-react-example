@@ -17,7 +17,8 @@ export default function Home() {
       firstName: 'babe',
       email: 'akin@gmail.com',
       age: 20,
-      password: "123456"
+      password: "123456",
+      made: false
     });
 
     const updatedUser = await UserModel.updateOneById(user.id, {
