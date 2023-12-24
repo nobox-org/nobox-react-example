@@ -14,7 +14,7 @@ export default function Home() {
     setIsLoading(true);
 
     const user = await UserModel.insertOne({
-      firstName: 'babe',
+      firstName: 'akin',
       email: 'akin@gmail.com',
       age: 20,
       password: "123456",
@@ -101,9 +101,9 @@ export default function Home() {
         <button onClick={() => addSampleUser()} title='AddUser' style={{ color: "red", margin: "0 10px 10px 0", fontSize: "20px", border: "2px blue solid", padding: "10px" }}> Add User <code style={{ fontSize: "10px" }}>{isLoading && `loading...`}</code></button>
 
         {
-          (users || []).map((user) => {
+          (users || []).map((user,i) => {
             return (
-              <p className="w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 mb-5">
+              <p key={i} className="w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30 mb-5">
                 <code className="font-mono font-bold" style={{
                   padding: "10px",
                   whiteSpace: 'pre-wrap'
