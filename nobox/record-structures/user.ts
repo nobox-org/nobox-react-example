@@ -1,12 +1,11 @@
 import { Space } from "nobox-client";
-import { createSchema } from "../config";
+import { createRowSchema } from "../config";
 
 interface User {
     email: string;
     password: string;
     firstName: string;
     age: number;
-    made: boolean;
 }
 
 export const UserStructure: Space<User> = {
@@ -33,13 +32,8 @@ export const UserStructure: Space<User> = {
             description: "User's Street Number",
             required: false,
             type: Number,
-        },
-        made: {
-            description: "if User is made of Gold",
-            required: false,
-            type: Boolean
         }
     }
 }
 
-export const UserModel = createSchema<User>(UserStructure);
+export const UserModel = createRowSchema<User>(UserStructure);

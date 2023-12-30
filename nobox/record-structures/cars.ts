@@ -1,5 +1,5 @@
 import { Space } from "nobox-client";
-import { createSchema } from "../config";
+import { createRowSchema } from "../config";
 
 interface Car {
     year: number;
@@ -33,6 +33,6 @@ export const CarStructure: Space<Car> = {
     }
 }
 
-export const CarModel = createSchema<Car>(CarStructure);
+export const CarModel = createRowSchema<Car>(CarStructure);
 
 

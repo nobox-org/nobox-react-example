@@ -1,12 +1,13 @@
-import { Config, getFunctions, getRowedSchemaCreator } from "nobox-client";
-import { getKeyGroupSchemaCreator } from "nobox-client/lib/create-schema/create-key-group-schema";
+import  {  Config,  getFunctions,  getSchemaCreator  }  from  "nobox-client";
 
 export const config: Config = {
-    endpoint: "http://localhost:8000",
-    project: "test-project",
-    token: "4f3ta31zd9m7gaibm2nlsod5gobmdl4dsfy8amgv"
+endpoint:  "https://api.nobox.cloud",
+project:  "30thDecember",
+token: "mauan_39amydpd4l2m179mnl7os5jnv4hvzdiu1_",
 };
 
-export const createSchema = getRowedSchemaCreator(config);
-export const createKeyValue = getKeyGroupSchemaCreator(config);
-export const Nobox = getFunctions(config);
+export const createRowSchema = getSchemaCreator(config, { type: "rowed" });
+
+export const createKeyGroupSchema = getSchemaCreator(config, { type: "key-group" });
+
+export  const  Nobox  =  getFunctions(config);

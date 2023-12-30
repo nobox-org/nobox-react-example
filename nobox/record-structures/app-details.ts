@@ -1,5 +1,5 @@
 import { Space } from "nobox-client";
-import { createKeyValue, createSchema } from "../config";
+import {  createKeyGroupSchema } from "../config";
 
 interface AppDetails {
     name: string;
@@ -29,4 +29,4 @@ export const AppDetailsStructure: Space<AppDetails> = {
     }
 }
 
-export const AppDetailsModel = createKeyValue<AppDetails>(AppDetailsStructure);
+export const AppDetailsModel = createKeyGroupSchema<AppDetails>(AppDetailsStructure);
